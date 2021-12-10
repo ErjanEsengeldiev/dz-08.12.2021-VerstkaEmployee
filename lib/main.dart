@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:urok_08_12_2021/splash_screen.dart';
 import 'package:urok_08_12_2021/widgets.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
     tomorowBerthFunc();
     todayBerthFunc();
 
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
     );
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
 }
 
 class FirstScrean extends StatefulWidget {
-  const FirstScrean({ Key? key }) : super(key: key);
+  const FirstScrean({Key? key}) : super(key: key);
 
   @override
   _FirstScreanState createState() => _FirstScreanState();
@@ -51,30 +51,30 @@ class FirstScrean extends StatefulWidget {
 class _FirstScreanState extends State<FirstScrean> {
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
-        backgroundColor: const Color.fromRGBO(245, 245, 245, 1),
-        body: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  //Text Сотрудники
-                  TextCollegs(),
-                  //Поиск
-                  SrechWidget(),
-                  //У Кого сегодня день рождения
-                  BerthdayToday(),
-                  //У Кого Завтра день рождения
-                  BerthdayTomorow(),
+    return Scaffold(
+      backgroundColor: const Color.fromRGBO(245, 245, 245, 1),
+      body: ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //Text Сотрудники
+                const TextCollegs(),
+                //Поиск
+                const SrechWidget(),
+                //У Кого сегодня день рождения
+                BerthdayToday(),
+                //У Кого Завтра день рождения
+                const BerthdayTomorow(),
 
-                  AallEmloyeeWidgetForMain()
-                ],
-              ),
+                const AallEmloyeeWidgetForMain()
+              ],
             ),
-          ],
-        ),
-      ); 
+          ),
+        ],
+      ),
+    );
   }
 }
