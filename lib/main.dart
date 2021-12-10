@@ -34,31 +34,30 @@ class MyApp extends StatelessWidget {
     todayBerthFunc();
 
     return MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-          backgroundColor: const Color.fromRGBO(245, 245, 245, 1),
-          body: ListView(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //Text Сотрудники
-                    TextCollegs(),
-                    //Поиск
-                    SrechWidget(),
-                    //У Кого сегодня день рождения
-                    BerthdayToday(),
-                    //У Кого Завтра день рождения
-                    BerthdayTomorow(),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: const Color.fromRGBO(245, 245, 245, 1),
+        body: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //Text Сотрудники
+                  TextCollegs(),
+                  //Поиск
+                  SrechWidget(),
+                  //У Кого сегодня день рождения
+                  BerthdayToday(),
+                  //У Кого Завтра день рождения
+                  BerthdayTomorow(),
 
-                    AallEmloyeeWidgetForMain()
-                  ],
-                ),
+                  AallEmloyeeWidgetForMain()
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

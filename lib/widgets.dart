@@ -437,8 +437,8 @@ List<CircleAvatarsForTop> listOfEmployee = [
   CircleAvatarsForTop(
       indexOfThisEmployee: 2,
       roudToImage: 'assets/images/images (1).jpeg',
-      name: 'Садыр',
-      serName: 'Жапаров',
+      name: 'Депутат',
+      serName: 'Непонятный',
       fathersName: 'Жапыркулович',
       positionInCompany: 'Генеральный директор',
       direction: 'Дирекция управления',
@@ -451,8 +451,8 @@ List<CircleAvatarsForTop> listOfEmployee = [
   CircleAvatarsForTop(
       indexOfThisEmployee: 3,
       roudToImage: 'assets/images/images.jpeg',
-      name: 'Мырзабек',
-      serName: 'Жапыркулов',
+      name: 'Садыр',
+      serName: 'Жапаров',
       fathersName: 'Жапыркулович',
       positionInCompany: 'Генеральный директор',
       direction: 'Дирекция управления',
@@ -464,7 +464,7 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneWhatsApp: '+9965501234321'),
   CircleAvatarsForTop(
       indexOfThisEmployee: 4,
-      roudToImage: 'assets/images/Ellipse 28 (1).png',
+      roudToImage: '',
       name: 'Мырзабек',
       serName: 'Жапыркулов',
       fathersName: 'Жапыркулович',
@@ -478,7 +478,7 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneWhatsApp: '+9965501234321'),
   CircleAvatarsForTop(
       indexOfThisEmployee: 5,
-      roudToImage: 'assets/images/Atambaev.jpeg',
+      roudToImage: '',
       name: 'Мырзабек',
       serName: 'Жапыркулов',
       fathersName: 'Жапыркулович',
@@ -492,7 +492,7 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneWhatsApp: '+9965501234321'),
   CircleAvatarsForTop(
       indexOfThisEmployee: 6,
-      roudToImage: 'assets/images/images (1).jpeg',
+      roudToImage: '',
       name: 'Мырзабек',
       serName: 'Жапыркулов',
       fathersName: 'Жапыркулович',
@@ -506,7 +506,7 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneWhatsApp: '+9965501234321'),
   CircleAvatarsForTop(
       indexOfThisEmployee: 7,
-      roudToImage: 'assets/images/images.jpeg',
+      roudToImage: '',
       name: 'Мырзабек',
       serName: 'Жапыркулов',
       fathersName: 'Жапыркулович',
