@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:urok_08_12_2021/splash_screen.dart';
 import 'package:urok_08_12_2021/widgets.dart';
 
 void main() => runApp(MyApp());
@@ -35,7 +36,22 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
+      home: SplashScreen(),
+    );
+  }
+}
+
+class FirstScrean extends StatefulWidget {
+  const FirstScrean({ Key? key }) : super(key: key);
+
+  @override
+  _FirstScreanState createState() => _FirstScreanState();
+}
+
+class _FirstScreanState extends State<FirstScrean> {
+  @override
+  Widget build(BuildContext context) {
+     return Scaffold(
         backgroundColor: const Color.fromRGBO(245, 245, 245, 1),
         body: ListView(
           children: [
@@ -59,7 +75,6 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      ); 
   }
 }

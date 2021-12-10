@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'employee_page.dart';
 
-//Widget Аватары для пункта У кого сегодня день рождения
+//Для создания Сотрудника
 class CircleAvatarsForTop extends StatelessWidget {
   int indexOfThisEmployee;
   String roudToImage;
