@@ -7,7 +7,6 @@ import 'employee_page.dart';
 class CircleAvatarsForTop extends StatelessWidget {
   int indexOfThisEmployee;
   String roudToImage;
-
   String name;
   String serName;
   String fathersName;
@@ -158,7 +157,9 @@ class _BerthdayTodayState extends State<BerthdayToday> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => EmployeePager(
-                                    indexForTakeEmployeeIndex: todayBerthadayListOfEmployee[index].indexOfThisEmployee,
+                                    indexForTakeEmployeeIndex:
+                                        todayBerthadayListOfEmployee[index]
+                                            .indexOfThisEmployee,
                                   ),
                                 ),
                               );
@@ -234,7 +235,9 @@ class BerthdayTomorow extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => EmployeePager(
-                                  indexForTakeEmployeeIndex: tomorowBerthadayListOfEmployee[index].indexOfThisEmployee,
+                                  indexForTakeEmployeeIndex:
+                                      tomorowBerthadayListOfEmployee[index]
+                                          .indexOfThisEmployee,
                                 ),
                               ),
                             );
