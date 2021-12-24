@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:urok_08_12_2021/splash_screen.dart';
 import 'package:urok_08_12_2021/widgets.dart';
+import 'package:urok_08_12_2021/widgets/today_berthday.dart';
+import 'package:urok_08_12_2021/widgets/tomorow_berthday.dart';
 
 void main() => runApp(const MyApp());
 
@@ -59,17 +61,17 @@ class _FirstScreanState extends State<FirstScrean> {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 //Text Сотрудники
-                const TextCollegs(),
+                TextCollegs(),
                 //Поиск
-                const SrechWidget(),
+                SrechWidget(),
                 //У Кого сегодня день рождения
                 BerthdayToday(),
                 //У Кого Завтра день рождения
-                const BerthdayTomorow(),
+                BerthdayTomorow(),
                 //Пункт все сотрудники
-                const AallEmloyeeWidgetForMain()
+                AallEmloyeeWidgetForMain()
               ],
             ),
           ),

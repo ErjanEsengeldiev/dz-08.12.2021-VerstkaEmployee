@@ -4,7 +4,7 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'employee_page.dart';
 
 //Для создания Сотрудника
-class CircleAvatarsForTop extends StatelessWidget {
+class EmployeeCreat extends StatelessWidget {
   int indexOfThisEmployee;
   String roudToImage;
   String name;
@@ -19,7 +19,7 @@ class CircleAvatarsForTop extends StatelessWidget {
   String phoneWork;
   String phoneWhatsApp;
 
-  CircleAvatarsForTop({
+  EmployeeCreat({
     required this.indexOfThisEmployee,
     required this.roudToImage,
     required this.name,
@@ -97,168 +97,6 @@ class TextCollegs extends StatelessWidget {
   }
 }
 
-//У кого сегодня день рождения
-class BerthdayToday extends StatefulWidget {
-  BerthdayToday({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<BerthdayToday> createState() => _BerthdayTodayState();
-}
-
-class _BerthdayTodayState extends State<BerthdayToday> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'У кого сегодня день рождения',
-            style: TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 16,
-              color: Color.fromRGBO(59, 129, 234, 1),
-            ),
-          ),
-          SizedBox(
-            height: 90,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: todayBerthadayListOfEmployee.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 19),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Container(
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundColor: Colors.blue,
-                          child: CircleAvatar(
-                            radius: 28,
-                            backgroundImage: AssetImage(
-                              todayBerthadayListOfEmployee[index].roudToImage,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 60,
-                        height: 60,
-                        child: Material(
-                          child: InkWell(
-                            splashColor: Colors.blue,
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => EmployeePager(
-                                    indexForTakeEmployeeIndex:
-                                        todayBerthadayListOfEmployee[index]
-                                            .indexOfThisEmployee,
-                                  ),
-                                ),
-                              );
-                            },
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(30)),
-                          ),
-                          color: Colors.transparent,
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-//У кого завтра день рождения
-class BerthdayTomorow extends StatelessWidget {
-  const BerthdayTomorow({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          'У кого завтра день рождения',
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 16,
-            color: Colors.black,
-          ),
-        ),
-        SizedBox(
-          height: 90,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: tomorowBerthadayListOfEmployee.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 19),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      child: CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.blue,
-                        child: CircleAvatar(
-                          radius: 28,
-                          backgroundImage: AssetImage(
-                            tomorowBerthadayListOfEmployee[index].roudToImage,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: Material(
-                        child: InkWell(
-                          splashColor: Colors.blue,
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => EmployeePager(
-                                  indexForTakeEmployeeIndex:
-                                      tomorowBerthadayListOfEmployee[index]
-                                          .indexOfThisEmployee,
-                                ),
-                              ),
-                            );
-                          },
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(30)),
-                        ),
-                        color: Colors.transparent,
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            },
-          ),
-        ),
-      ],
-    );
-  }
-}
-
 //Widget для списка "Все Сотрудники"
 class Employee extends StatelessWidget {
   int indexFromListOfEmployee;
@@ -275,26 +113,24 @@ class Employee extends StatelessWidget {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {
-          return Container(
-            child: new Wrap(
-              children: <Widget>[
-                new ListTile(
-                    leading: new Icon(Icons.phone),
-                    title: new Text(
-                        'Позвонить ${listOfEmployee[indexFromListOfEmployee].phoneMain}'),
-                    onTap: _callNumber),
-                new ListTile(
-                  leading: new Icon(Icons.message),
-                  title: new Text('СМС'),
-                  onTap: () => {},
-                ),
-                new ListTile(
-                  leading: new Icon(Icons.message),
-                  title: new Text('СМС'),
-                  onTap: () => {},
-                ),
-              ],
-            ),
+          return  Wrap(
+            children: <Widget>[
+               ListTile(
+                  leading:  Icon(Icons.phone),
+                  title:  Text(
+                      'Позвонить ${listOfEmployee[indexFromListOfEmployee].phoneMain}'),
+                  onTap: _callNumber),
+               ListTile(
+                leading:  const Icon(Icons.message),
+                title:  const Text('СМС'),
+                onTap: () => {},
+              ),
+               ListTile(
+                leading:  const Icon(Icons.message),
+                title:  const Text('СМС'),
+                onTap: () => {},
+              ),
+            ],
           );
         });
   }
@@ -306,7 +142,7 @@ class Employee extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(10)),
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 11),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 11),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -367,14 +203,14 @@ class AallEmloyeeWidgetForMain extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Все Сотрудники',
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 16,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Employee(
@@ -402,14 +238,14 @@ class AallEmloyeeWidgetForMain extends StatelessWidget {
 }
 
 //Спиок работников у кого сегодня денб рождения
-List<CircleAvatarsForTop> todayBerthadayListOfEmployee = [];
+List<EmployeeCreat> todayBerthadayListOfEmployee = [];
 
 //Спиок работников у кого завтра день рождени
-List<CircleAvatarsForTop> tomorowBerthadayListOfEmployee = [];
+List<EmployeeCreat> tomorowBerthadayListOfEmployee = [];
 
 //Список всех работников
-List<CircleAvatarsForTop> listOfEmployee = [
-  CircleAvatarsForTop(
+List<EmployeeCreat> listOfEmployee = [
+  EmployeeCreat(
       indexOfThisEmployee: 0,
       roudToImage: 'assets/images/Ellipse 28 (1).png',
       name: 'Мырзабек',
@@ -423,7 +259,7 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneMain: '+9965501234321',
       phoneWork: '+9965501234321',
       phoneWhatsApp: '+9965501234321'),
-  CircleAvatarsForTop(
+  EmployeeCreat(
       indexOfThisEmployee: 1,
       roudToImage: 'assets/images/Atambaev.jpeg',
       name: 'Алмазбек',
@@ -437,7 +273,7 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneMain: '+9965501234321',
       phoneWork: '+9965501234321',
       phoneWhatsApp: '+9965501234321'),
-  CircleAvatarsForTop(
+  EmployeeCreat(
       indexOfThisEmployee: 2,
       roudToImage: 'assets/images/images (1).jpeg',
       name: 'Депутат',
@@ -451,7 +287,7 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneMain: '+9965501234321',
       phoneWork: '+9965501234321',
       phoneWhatsApp: '+9965501234321'),
-  CircleAvatarsForTop(
+  EmployeeCreat(
       indexOfThisEmployee: 3,
       roudToImage: 'assets/images/images.jpeg',
       name: 'Садыр',
@@ -465,7 +301,7 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneMain: '+9965501234321',
       phoneWork: '+9965501234321',
       phoneWhatsApp: '+9965501234321'),
-  CircleAvatarsForTop(
+  EmployeeCreat(
       indexOfThisEmployee: 4,
       roudToImage: '',
       name: 'Мырзабек',
@@ -479,7 +315,7 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneMain: '+9965501234321',
       phoneWork: '+9965501234321',
       phoneWhatsApp: '+9965501234321'),
-  CircleAvatarsForTop(
+  EmployeeCreat(
       indexOfThisEmployee: 5,
       roudToImage: '',
       name: 'Мырзабек',
@@ -493,7 +329,7 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneMain: '+9965501234321',
       phoneWork: '+9965501234321',
       phoneWhatsApp: '+9965501234321'),
-  CircleAvatarsForTop(
+  EmployeeCreat(
       indexOfThisEmployee: 6,
       roudToImage: '',
       name: 'Мырзабек',
@@ -507,7 +343,7 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneMain: '+9965501234321',
       phoneWork: '+9965501234321',
       phoneWhatsApp: '+9965501234321'),
-  CircleAvatarsForTop(
+  EmployeeCreat(
       indexOfThisEmployee: 7,
       roudToImage: '',
       name: 'Мырзабек',
@@ -521,4 +357,6 @@ List<CircleAvatarsForTop> listOfEmployee = [
       phoneMain: '+9965501234321',
       phoneWork: '+9965501234321',
       phoneWhatsApp: '+9965501234321'),
+
+      
 ];
